@@ -1,7 +1,7 @@
 # Project information
 site_name: "Dr. Uğur CORUH Blog"
 docs_dir: docs  # Where to find the markdown files
-site_dir: site  # Where to output the HTML files
+site_dir: docs  # Where to output the HTML files
 site_author: 'Dr. Uğur CORUH'
 site_url: 'https://ucoruh.github.io/coruh/'
 site_description: 'Dr. Uğur CORUH Blog'
