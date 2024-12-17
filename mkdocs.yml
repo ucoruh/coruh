@@ -73,7 +73,7 @@ extra:
     json: [.s2]
   analytics:
     provider: google
-    property: !ENV GOOGLE_ANALYTICS_KOSGEB_RIZE
+    property: !ENV GOOGLE_ANALYTICS_UCORUH
     feedback:
       title: Was this page helpful?
       ratings:
@@ -223,6 +223,6 @@ nav:
   - "Academic": academic/academic.md
   - "Hardware": hardware/hardware.md
   - "Software": software/software.md
-  - "Out-of-Scope": out-of-scope/out-of-scope.md
+  - "Out-of-Scope": outofscope/outofscope.md
   - License: license/index.md
   - Changelog: changelog/index.md
