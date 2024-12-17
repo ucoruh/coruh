@@ -1,44 +1,41 @@
 # Project information
-site_name: "Dr. Uğur CORUH"
-site_name_en: "Dr. Uğur CORUH"
-site_name_tr: "Dr. Uğur CORUH"
-docs_dir: docs/  # Where to find the English markdown files
-site_dir: site/  # Where to put the English HTML files
-#exclude_docs: overrides/
-
-site_author: 'Asst. Prof. Dr. Uğur CORUH'
+site_name: "Dr. Uğur CORUH Blog"
+docs_dir: docs  # Where to find the markdown files
+site_dir: site  # Where to output the HTML files
+site_author: 'Dr. Uğur CORUH'
 site_url: 'https://ucoruh.github.io/coruh/'
-site_description: >-
-    Knowledgebase, Archive and Blog
-    
-site_description_en: >-
-    Knowledgebase, Archive and Blog
-
-site_description_tr: >-
-    Bilgi Bankası, Arşiv ve Blog
+site_description: 'Dr. Uğur CORUH Blog'
 
 # Repository
 repo_name: 'GitHub'
 repo_url: 'https://github.com/ucoruh/coruh'
-edit_uri: edit/main/docs/
+edit_uri: 'https://github.com/ucoruh/coruh/edit/main/docs/'
 
 # Copyright
-copyright: Copyright &copy; 2008 - 2024 Asst. Prof. Dr. Uğur CORUH
-     
+copyright: Copyright &copy; 2022 - 2024 Dr. Uğur CORUH
+
 # Configuration
 theme:
   name: material
-  custom_dir: overrides
+  custom_dir: docs/overrides
+
+  favicon: images/favicon.png
+
+  icon:
+    previous: fontawesome/solid/angle-left
+    next: fontawesome/solid/angle-right
+    logo: logo  # Adjust the file name if necessary
+  
   # Don't include MkDocs' JavaScript
   include_search_page: false
   search_index_only: true
   
-  # Static files
+  # Static files  
   static_templates:
-    - 404.html
+   - 404.html
     
   # Default values, taken from mkdocs_theme.yml
-  language: en
+  language: tr
   features:
     - content.code.annotate
     - content.tabs.link
@@ -69,17 +66,14 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  favicon: images/favicon.png
-  icon:
-    logo: logo
-    
+
 # Customization
 extra:
   annotate:
     json: [.s2]
   analytics:
     provider: google
-    property: !ENV GOOGLE_ANALYTICS_UCORUH
+    property: !ENV GOOGLE_ANALYTICS_KOSGEB_RIZE
     feedback:
       title: Was this page helpful?
       ratings:
@@ -96,7 +90,7 @@ extra:
             using our <a href="..." target=_blank>feedback form</a>.
   consent:
     title: Cookie consent
-    description: >- 
+    description: >-
       We use cookies to recognize your repeated visits and preferences, as well
       as to measure the effectiveness of our documentation and whether users
       find what they're searching for. With your consent, you're helping us to
@@ -106,27 +100,13 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/ucoruh
-    - icon: fontawesome/brands/bitbucket
-      link: https://bitbucket.org/ucoruh/
-    - icon: fontawesome/regular/compass
-      link: https://www.scopus.com/authid/detail.uri?authorId=57218950743
-    - icon: fontawesome/regular/id-card
-      link: https://dblp.org/pid/230/0394.html
-    - icon: fontawesome/brands/docker
-      link: https://hub.docker.com/u/ucoruh/
-    - icon: fontawesome/brands/orcid
-      link: https://orcid.org/my-orcid?orcid=0000-0003-4193-8401
     - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/ugurcoruh/
-    - icon: fontawesome/regular/moon
-      link: https://publons.com/researcher/1540204/ugur-coruh/
-    - icon: fontawesome/brands/google
-      link: https://scholar.google.com/citations?user=KIU4ltMAAAAJ&hl=tr
-    - icon: fontawesome/regular/clipboard
-      link: https://avesis.erdogan.edu.tr/ugur.coruh
-    - icon: fontawesome/regular/user
-      link: https://www.ugurcoruh.com/
-      
+      link: https://www.linkedin.com/ucoruh
+    - icon: fontawesome/regular/id-card
+      link: https://www.linkedin.com/in/ugurcoruh
+    - icon: fontawesome/brands/orcid
+      link: http://www.coruh.com.tr/
+
 # Extensions
 markdown_extensions:
   - admonition
@@ -153,8 +133,8 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.magiclink:
       repo_url_shorthand: true
-      user: ucoruh
-      repo: coruh
+      user: coruhtech
+      repo: kosgeb-rize
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.superfences:
@@ -170,40 +150,47 @@ markdown_extensions:
   - codehilite:
       guess_lang: true
 
-# for github personal access token open - https://github.com/settings/tokens
+# Plugins
 plugins:
   - mkdocs-simple-hooks:
       hooks:
-          on_env: "hooks:on_env"
-  # https://github.com/fire1ce/mkdocs-embed-external-markdown
+        on_env: "hooks:on_env"
   - external-markdown
-  - mkdocs-video #https://pypi.org/project/mkdocs-video/
+  - mkdocs-video
   - search:
       separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - i18n:
-      #docs_structure: suffix
-      fallback_to_default: true
+      docs_structure: suffix
       reconfigure_material: true
       reconfigure_search: true
+      fallback_to_default: true
       languages:
-        - locale: en
-          default: true
-          name: English
-          build: true
-          site_name: "Knowledgebase, Archive and Blog"
         - locale: tr
-          name: Türkçe
+          name: "Türkçe"
           build: true
-          site_name: "Bilgi Bankası, Arşiv ve Blog"
+          default: true
+          site_name: "Dr. Uğur CORUH Blog"
           nav_translations:
-            tr:
-              Home: 'Anasayfa'
-              Software: 'Yazılım'
-              Hardware: 'Donanım'
-              Academic: 'Akademik'
-              Out-of-Scope :  'Kapsam Dışı'
-              License: 'Lisans'
-              Changelog: 'Revizyon'
+            "Home": "Anasayfa" 
+            "Academic": "Akademik" 
+            "Hardware": "Donanım" 
+            "Software": "Yazılım" 
+            "Out-of-Scope": "Kapsam Dışı" 
+            "License": "Lisans" 
+            "Changelog": "Revizyonlar" 
+        - locale: en
+          name: "English"
+          build: true
+          default: false
+          site_name: "Dr. Uğur CORUH Blog"
+          nav_translations:
+            "Anasayfa" : "Home" 
+            "Akademik" : "Academic" 
+            "Donanım" : "Hardware" 
+            "Yazılım" : "Software"
+            "Kapsam Dışı" : "Out-of-Scope" 
+            "Lisans" : "License" 
+            "Revizyonlar" : "Changelog" 
   - tags:
       tags_file: tags.md
   - minify:
@@ -211,33 +198,31 @@ plugins:
       htmlmin_opts:
         remove_comments: true
   - git-revision-date-localized:
+      fallback_to_build_date: true
       type: timeago
-      # enabled: !ENV [MKDOCS_ENABLE_GIT_REVISION_DATE, True]
   - git-authors:
       sort_authors_by: contribution
   - git-committers:
       repository: ucoruh/coruh
       docs_path: docs/
       branch: main
-      #token: !!python/object/apply:os.getenv ["MKDOCS_GIT_COMMITTERS_APIKEY"]
       token: !ENV MKDOCS_GIT_COMMITTERS_APIKEY
-      # enabled: !ENV [MKDOCS_GIT_COMMITTERS_APIKEY, True]
   - macros
 
+markdown_extensions:
+  - attr_list
+  - md_in_html
+
 extra_javascript:
-  - javascript/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-  
-# Page tree
+
+# Page tree (for navigation)
 nav:
   - Home: index.md
-  - Software: software/software.md
-  - Hardware: hardware/hardware.md
-  - Academic: academic/academic.md
-  - Out-of-Scope : outofscope/outofscope.md
-  - License: license/license.md
-  - Changelog: changelog/changelog.md
-
-  
-
+  - "Academic": academic/academic.md
+  - "Hardware": hardware/hardware.md
+  - "Software": software/software.md
+  - "Out-of-Scope": out-of-scope/out-of-scope.md
+  - License: license/index.md
+  - Changelog: changelog/index.md
